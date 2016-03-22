@@ -39,19 +39,6 @@ class ONGRFilterManagerBundle extends Bundle
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
-        
-        /** @var ONGRFilterManagerExtension $extension */
-        $extension = $container->getExtension('ongr_filter_manager');
-        $extension->addFilterFactory(new ChoiceFilterFactory());
-        $extension->addFilterFactory(new MultiChoiceFilterFactory());
-        $extension->addFilterFactory(new MatchFilterFactory());
-        $extension->addFilterFactory(new FuzzyFilterFactory());
-        $extension->addFilterFactory(new SortFilterFactory());
-        $extension->addFilterFactory(new PagerFilterFactory());
-        $extension->addFilterFactory(new RangeFilterFactory());
-        $extension->addFilterFactory(new DateRangeFilterFactory());
-        $extension->addFilterFactory(new FieldValueFactory());
-        $extension->addFilterFactory(new DocumentValueFactory());
 
         $container->addCompilerPass(new FilterPass());
     }

@@ -24,26 +24,6 @@ use Symfony\Component\HttpFoundation\Request;
 class FilterContainer extends ParameterBag
 {
     /**
-     * {@inheritdoc}
-     */
-    public function add(array $parameters = [])
-    {
-        foreach ($parameters as $key => $value) {
-            $this->set($key, $value);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function set($key, $value)
-    {
-        if ($value instanceof FilterInterface) {
-            parent::set($key, $value);
-        }
-    }
-
-    /**
      * Filters accepted.
      *
      * @param RelationInterface $relation

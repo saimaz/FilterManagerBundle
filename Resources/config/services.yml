@@ -5,3 +5,24 @@ services:
                 - '@router'
             tags:
                 - { name: twig.extension }
+
+# Filters
+    ongr_filter_manager.filter.single_choice:
+        class: ONGR\FilterManagerBundle\Filter\Widget\Choice\SingleTermChoice
+        tags:
+            - { name: ongr_filter_manager.filter, type: single_choice }
+
+    ongr_filter_manager.filter.multi_choice:
+        class: ONGR\FilterManagerBundle\Filter\Widget\Choice\MultiTermChoice
+        tags:
+            - { name: ongr_filter_manager.filter, type: multi_choice }
+
+    ongr_filter_manager.filter.pager:
+        class: ONGR\FilterManagerBundle\Filter\Widget\Pager\Pager
+        tags:
+            - { name: ongr_filter_manager.filter, type: pager }
+
+    ongr_filter_manager.filter.range:
+        class: ONGR\FilterManagerBundle\Filter\Widget\Range\Range
+        tags:
+            - { name: ongr_filter_manager.filter, type: range }

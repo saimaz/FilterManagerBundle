@@ -24,6 +24,8 @@ abstract class AbstractSingleRequestValueFilter implements FilterInterface
     use RelationAwareTrait;
 
     /**
+     * Field name in url for specific filter.
+     *
      * @var string
      */
     private $requestField;
@@ -32,6 +34,29 @@ abstract class AbstractSingleRequestValueFilter implements FilterInterface
      * @var array
      */
     private $tags = [];
+
+    /**
+     * Filter configuration.
+     *
+     * @var array
+     */
+    private $config = [];
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * @param array $config
+     */
+    public function setConfig($config)
+    {
+        $this->config = $config;
+    }
 
     /**
      * {@inheritdoc}

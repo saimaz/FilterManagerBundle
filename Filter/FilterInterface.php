@@ -23,6 +23,14 @@ use Symfony\Component\HttpFoundation\Request;
 interface FilterInterface extends RelationAwareInterface
 {
     /**
+     * Filter configuration setter.
+     *
+     * @param array $config
+     */
+    public function setConfig($config);
+
+
+    /**
      * Resolves filter state by given request.
      *
      * @param Request $request
